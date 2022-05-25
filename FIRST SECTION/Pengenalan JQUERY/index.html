@@ -1,0 +1,20 @@
+<html>
+<head>
+	<title>Tutorial belajar JQuery Part 2 : Belajar pengenalan jquery dasar</title>	
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+        <h1>Tutorial JQuery Dasar www.malasngoding.com</h1>
+	<button id="tombol">TOMBOL</button>
+	<div class="box"></div>
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.tombol').click(function(){
+			$('.box').toggle();
+		});
+	});
+</script>
+</html>
