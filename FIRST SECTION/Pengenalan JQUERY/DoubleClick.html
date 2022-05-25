@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tutorial belajar JQuery Part 3 : Mengenal Event double click Pada JQuery</title>	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1>Mengenal Event double click pada JQuery | www.malasngoding.com</h1>
+	<button id="tombol">TOMBOL</button>
+	<div class="box"></div>
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#tombol').dblclick(function(){
+			$('.box').toggle();
+		});
+	});
+</script>
+</html>
