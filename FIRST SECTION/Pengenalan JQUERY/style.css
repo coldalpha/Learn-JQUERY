@@ -18,3 +18,21 @@ body{
           background: #34495E;
           border: none;
    }
+   #tombol, #tombol2, #tombol3,
+    #tombol4, #tombol5, #tombol6,
+     #tombol7, #tombol8, #tombol9,
+      #tombol10, #tombol11, #tombol12{
+        padding:3px;
+        margin: 2px;
+        color: #fff;
+        background: #34495E;
+        border: none;
+   }
+    #tombol4, #tombol5, #tombol6,
+      #tombol10, #tombol11, #tombol12{
+        padding:3px;
+        margin: 2px;
+        color: #fff;
+        background: #e912a1;
+        border: none;
+   }

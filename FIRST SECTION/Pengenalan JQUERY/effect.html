@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tutorial belajar JQuery Part 4 : Mengenal Effect Pada JQuery</title>	
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1>Efect pada JQuery | www.malasngoding.com</h1>
+    <div class="row">
+        <div class="col-3">
+            <button id="tombol">Tampilkan kotak</button>
+            <button id="tombol2">Sembunyikan kotak</button>
+            <button id="tombol3">Tampilkan/Sembunyikan kotak</button>	
+            <button id="tombol4">Tampilkan kotak (slideDown)</button>
+            <button id="tombol5">Sembunyikan kotak (slideUp)</button>
+            <button id="tombol6">Effect slide Toggle kotak (slideToggle)</button>
+            <button id="tombol7">Tampilkan kotak (fadeIn)</button>
+            <button id="tombol8">Sembunyikan kotak (fadeOut)</button>
+            <button id="tombol9">Effect slide Toggle kotak (fadeToggle)</button>
+            <button id="tombol10">Tampilkan kotak (fadeIn) Waktu</button>
+            <button id="tombol11">Sembunyikan kotak (fadeOut)  Waktu</button>
+            <button id="tombol12">Effect slide Toggle kotak (fadeToggle)  Waktu</button>
+        </div>
+        <div class="col-6">
+            <div class="box"></div>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#tombol').click(function(){
+			$('.box').show();
+		});
+		$('#tombol2').click(function(){
+			$('.box').hide();
+		});
+        $('#tombol3').click(function(){
+            $('.box').toggle();
+        });
+        $('#tombol4').click(function(){
+            $('.box').slideDown();
+        });
+        $('#tombol5').click(function(){
+            $('.box').slideUp();
+        });
+        $('#tombol6').click(function(){
+            $('.box').slideToggle();
+        });
+        $('#tombol7').click(function(){
+			$('.box').fadeIn();
+		});
+		$('#tombol8').click(function(){
+			$('.box').fadeOut();
+		});
+ 
+		$('#tombol9').click(function(){
+			$('.box').fadeToggle();
+		});
+        $('#tombol10').click(function(){
+			$('.box').fadeIn(800);
+		});
+ 
+		$('#tombol11').click(function(){
+			$('.box').fadeOut('fast');
+		});
+ 
+		$('#tombol12').click(function(){
+			$('.box').fadeToggle(500);
+		});
+	});
+</script>
+</html>
