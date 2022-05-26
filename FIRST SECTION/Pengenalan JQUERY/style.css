@@ -1,38 +1,57 @@
-body{
+body {
     font-family: sans-serif;
-   }
-    
-   h1{
+}
+
+h1 {
     text-align: center;
-   }
-    
-   .box{
-       height: 300px;
-       width:300px;
-       background: orange;
-   }
-    
-   #tombol{
-          padding:10px;
-          color: #fff;
-          background: #34495E;
-          border: none;
-   }
-   #tombol, #tombol2, #tombol3,
-    #tombol4, #tombol5, #tombol6,
-     #tombol7, #tombol8, #tombol9,
-      #tombol10, #tombol11, #tombol12{
-        padding:3px;
-        margin: 2px;
-        color: #fff;
-        background: #34495E;
-        border: none;
-   }
-    #tombol4, #tombol5, #tombol6,
-      #tombol10, #tombol11, #tombol12{
-        padding:3px;
-        margin: 2px;
-        color: #fff;
-        background: #e912a1;
-        border: none;
-   }
+}
+
+.box {
+    height: 300px;
+    width: 300px;
+    background: orange;
+    display: none;
+}
+
+.box-biru {
+    height: 300px;
+    width: 300px;
+    background: rgb(10, 52, 236);
+    display: none;
+}
+
+#tombol {
+    padding: 10px;
+    color: #fff;
+    background: #34495e;
+    border: none;
+}
+
+#tombol,
+#tombol2,
+#tombol3,
+#tombol7,
+#tombol8,
+#tombol9,
+#tombol13,
+#tombol14,
+#tombol15 {
+    padding: 3px;
+    margin: 2px;
+    color: #fff;
+    background: #34495e;
+    border: none;
+}
+
+#tombol4,
+#tombol5,
+#tombol6,
+#tombol10,
+#tombol11,
+#tombol12 {
+    padding: 3px;
+    margin: 2px;
+    color: #fff;
+    background: #e912a1;
+    border: none;
+}

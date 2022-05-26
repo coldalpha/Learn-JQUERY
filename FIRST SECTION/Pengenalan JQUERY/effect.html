@@ -1,75 +1,101 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Tutorial belajar JQuery Part 4 : Mengenal Effect Pada JQuery</title>	
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <title>Tutorial belajar JQuery Part 4 : Mengenal Effect Pada JQuery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
+
 <body>
-	<h1>Efect pada JQuery | www.malasngoding.com</h1>
+    <h1>Efect pada JQuery | www.malasngoding.com</h1>
     <div class="row">
         <div class="col-3">
             <button id="tombol">Tampilkan kotak</button>
             <button id="tombol2">Sembunyikan kotak</button>
-            <button id="tombol3">Tampilkan/Sembunyikan kotak</button>	
+            <button id="tombol3">Tampilkan/Sembunyikan kotak</button>
             <button id="tombol4">Tampilkan kotak (slideDown)</button>
             <button id="tombol5">Sembunyikan kotak (slideUp)</button>
             <button id="tombol6">Effect slide Toggle kotak (slideToggle)</button>
             <button id="tombol7">Tampilkan kotak (fadeIn)</button>
             <button id="tombol8">Sembunyikan kotak (fadeOut)</button>
             <button id="tombol9">Effect slide Toggle kotak (fadeToggle)</button>
-            <button id="tombol10">Tampilkan kotak (fadeIn) Waktu</button>
-            <button id="tombol11">Sembunyikan kotak (fadeOut)  Waktu</button>
-            <button id="tombol12">Effect slide Toggle kotak (fadeToggle)  Waktu</button>
         </div>
         <div class="col-6">
+            <h3 id="hilang"></h3>
             <div class="box"></div>
+            <div class="box-biru"></div>
+        </div>
+        <div class="col-3">
+            <button id="tombol10">Tampilkan kotak (fadeIn) Waktu</button>
+            <button id="tombol11">Sembunyikan kotak (fadeOut) Waktu</button>
+            <button id="tombol12">
+          Effect slide Toggle kotak (fadeToggle) Waktu
+        </button>
+            <button id="tombol13">Fadein > SlideOut (Callback function)</button>
+            <button id="tombol14">Fadein > SlideOut (Chaining function)</button>
+            <button id="tombol15">Callback function x Chaining function</button>
         </div>
     </div>
-
 </body>
 <script type="text/javascript">
-	$(document).ready(function(){
-		$('#tombol').click(function(){
-			$('.box').show();
-		});
-		$('#tombol2').click(function(){
-			$('.box').hide();
-		});
-        $('#tombol3').click(function(){
-            $('.box').toggle();
+    $(document).ready(function() {
+        $("#tombol").click(function() {
+            $(".box").show();
         });
-        $('#tombol4').click(function(){
-            $('.box').slideDown();
+        $("#tombol2").click(function() {
+            $(".box").hide();
+            $(".box-biru").hide();
         });
-        $('#tombol5').click(function(){
-            $('.box').slideUp();
+        $("#tombol3").click(function() {
+            $(".box").toggle();
         });
-        $('#tombol6').click(function(){
-            $('.box').slideToggle();
+        $("#tombol4").click(function() {
+            $(".box").slideDown();
         });
-        $('#tombol7').click(function(){
-			$('.box').fadeIn();
-		});
-		$('#tombol8').click(function(){
-			$('.box').fadeOut();
-		});
- 
-		$('#tombol9').click(function(){
-			$('.box').fadeToggle();
-		});
-        $('#tombol10').click(function(){
-			$('.box').fadeIn(800);
-		});
- 
-		$('#tombol11').click(function(){
-			$('.box').fadeOut('fast');
-		});
- 
-		$('#tombol12').click(function(){
-			$('.box').fadeToggle(500);
-		});
-	});
+        $("#tombol5").click(function() {
+            $(".box").slideUp();
+        });
+        $("#tombol6").click(function() {
+            $(".box").slideToggle();
+        });
+        $("#tombol7").click(function() {
+            $(".box").fadeIn();
+        });
+        $("#tombol8").click(function() {
+            $(".box").fadeOut();
+        });
+        $("#tombol9").click(function() {
+            $(".box").fadeToggle();
+        });
+        $("#tombol10").click(function() {
+            $(".box").fadeIn(800);
+        });
+
+        $("#tombol11").click(function() {
+            $(".box").fadeOut("fast");
+        });
+        $("#tombol12").click(function() {
+            $(".box").fadeToggle(500);
+        });
+        $("#hilang").text("Text ini akan hilang dalam 3 Detik").fadeOut(3000);
+        $("#tombol13").click(function() {
+            $(".box").fadeIn(3000, function() {
+                $(".box-biru").slideDown(3000);
+            });
+        });
+        $("#tombol14").click(function() {
+            $(".box").fadeIn(1000).slideUp(1000).slideDown(1000).fadeOut(1000);
+        });
+        $("#tombol15").click(function() {
+            $(".box")
+                .fadeIn(3000, function() {
+                    $(".box-biru").slideDown(3000).slideUp(3000);
+                })
+                .fadeOut(3000);
+        });
+    });
 </script>
+
 </html>
