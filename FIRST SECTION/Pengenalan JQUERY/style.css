@@ -20,6 +20,10 @@ h1 {
     display: none;
 }
 
+.card {
+    display: none;
+}
+
 #tombol {
     padding: 10px;
     color: #fff;
@@ -28,6 +32,7 @@ h1 {
 }
 
 #tombol,
+#card,
 #tombol2,
 #tombol3,
 #tombol7,

@@ -10,7 +10,13 @@
 
 <body>
     <h1>Efect pada JQuery | www.malasngoding.com</h1>
+    <h3 id="hilang"></h3>
     <div class="row">
+        <div class="col-3">
+            <button id="card">Kartu Tersembunyi</button>
+            <div class="kartu"></div>
+            <div class="card" style="width: 18rem"></div>
+        </div>
         <div class="col-3">
             <button id="tombol">Tampilkan kotak</button>
             <button id="tombol2">Sembunyikan kotak</button>
@@ -22,8 +28,7 @@
             <button id="tombol8">Sembunyikan kotak (fadeOut)</button>
             <button id="tombol9">Effect slide Toggle kotak (fadeToggle)</button>
         </div>
-        <div class="col-6">
-            <h3 id="hilang"></h3>
+        <div class="col-3">
             <div class="box"></div>
             <div class="box-biru"></div>
         </div>
@@ -33,14 +38,32 @@
             <button id="tombol12">
           Effect slide Toggle kotak (fadeToggle) Waktu
         </button>
-            <button id="tombol13">Fadein > SlideOut (Callback function)</button>
-            <button id="tombol14">Fadein > SlideOut (Chaining function)</button>
+            <button id="tombol13">Fadein > SlideOut (Chaining function)</button>
+            <button id="tombol14">Fadein > SlideOut (Callback function)</button>
             <button id="tombol15">Callback function x Chaining function</button>
         </div>
     </div>
 </body>
 <script type="text/javascript">
     $(document).ready(function() {
+        $("#card").click(function() {
+            $(".card")
+                .html(
+                    `<img class="card-img-top" src="asset/fataa.jpg" alt="Card image cap" />
+                <div class="card-body">
+                    <h5 class="card-title">Al Fataa</h5>
+                    <p class="card-text">This Photo Take in Sahid Mandari Hotel</p>
+                    <a href="#" class="btn btn-primary prank">Detail?Klik Me</a>
+                </div>`
+                )
+                .toggle();
+            $(".prank").click(function() {
+                alert("Sorry ini web Statis :'(");
+                var teks = $(".card").html();
+                console.log(teks);
+            });
+        });
+
         $("#tombol").click(function() {
             $(".box").show();
         });
@@ -81,13 +104,14 @@
         });
         $("#hilang").text("Text ini akan hilang dalam 3 Detik").fadeOut(3000);
         $("#tombol13").click(function() {
+            $(".box").fadeIn(1000).slideUp(1000).slideDown(1000).fadeOut(1000);
+        });
+        $("#tombol14").click(function() {
             $(".box").fadeIn(3000, function() {
                 $(".box-biru").slideDown(3000);
             });
         });
-        $("#tombol14").click(function() {
-            $(".box").fadeIn(1000).slideUp(1000).slideDown(1000).fadeOut(1000);
-        });
+
         $("#tombol15").click(function() {
             $(".box")
                 .fadeIn(3000, function() {

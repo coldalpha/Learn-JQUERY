@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Paginate Learn</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nama</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item" data="prev">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item" data="next">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                        <li>
+                            <p class="ml-2 mt-2">
+                                <span id="cur_page"></span> page of
+                                <span id="total_page"></span> pages
+                            </p>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var array = [
+        "shelli",
+        "shari",
+        "prapti",
+        "rifkie",
+        "jaka",
+        "adi",
+        "chelsea",
+        "siti",
+        "cucu",
+        "neni",
+        "jeji",
+    ];
+
+    function show(row, page) {
+        $("tbody").html("");
+        let limit = parseInt(row);
+        let cur_page = parseInt(page);
+        let total_page = Math.ceil(array.length / limit);
+        let length = limit * (cur_page + 1);
+        if (length >= array.length) {
+            length = array.length;
+        }
+        let offset = cur_page * limit;
+        $("#cur_page").text(cur_page + 1);
+        $("#total_page").text(total_page);
+        for (var i = offset; i < length; i++) {
+            $("tbody").append(`<tr>
+                                    <td>${i + 1}</td>
+                                    <td>${array[i]}</td>
+                                    </tr>`);
+        }
+    }
+    show("4", "0");
+    $(document).on("click", ".page-item", function(e) {
+        e.preventDefault();
+        var key = $(this).attr("data");
+        var total = $("#total_page").text();
+        var cur_page = $("#cur_page").text();
+        var page = parseInt(cur_page) - 1;
+        var length = parseInt(total) - 1;
+        if (key == "prev") {
+            if (page <= 0) {
+                page = 0;
+            } else {
+                page--;
+            }
+        } else if (key == "next") {
+            if (page >= length) {
+                page = length;
+            } else {
+                page++;
+            }
+        }
+        show("4", page);
+    });
+</script>
+
+</html>
